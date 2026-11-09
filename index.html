@@ -105,6 +105,11 @@ header{
 .chip b{color:var(--text)}
 .chip.gold{border-color:rgba(242,193,78,.35);color:var(--gold)}
 
+.footer {
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--divider);
+    text-align: center; color: var(--faint); font-size: 14px;
+}
+
 .scene{grid-column:1;grid-row:2;position:relative;min-height:0;display:flex;align-items:flex-end;justify-content:center;padding:8px 10px 82px}
 #treeSvg{width:100%;height:100%;display:block;overflow:visible}
 #treeSvg.pop{animation:pop .4s cubic-bezier(.34,1.56,.64,1)}
@@ -392,7 +397,7 @@ body.embedded .install-banner{display:none!important}
     <div class="secret-hint" id="secretHint"></div>
   </div>
 </div>
-
+<footer class="footer">Автор: <a href="https://vk.ru/archigpt" target="_blank" rel="noopener">vk.ru/archigpt</a></footer>
 <script>
 /* =========================================================
    УТИЛИТЫ
