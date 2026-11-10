@@ -1269,7 +1269,7 @@ function openModal(){
   const found = save.secretsFound && save.secretsFound.santa;
   document.getElementById('secretHint').innerHTML = found
     ? '🤫 Секрет найден! Дед Мороз уже с тобой. 🎅'
-    : '🤫 <b>Где-то здесь спрятан секрет.</b> Попробуй необычное слово в поле ответа. Или пощёлкай по снеговику...';
+    : '🤫 <b>Где-то здесь спрятан секрет.</b> Попробуй необычное слово в поле ответа...';
   document.getElementById('modal').classList.add('active');
 }
 document.getElementById('btnAch').addEventListener('click', openModal);
