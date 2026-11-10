@@ -293,7 +293,10 @@ body.embedded .install-banner{display:none!important}
   font-weight: 600;
   letter-spacing: .3px;
   color: var(--muted);
-  background: linear-gradient(180deg, rgba(6, 10, 20, 0) 0%, rgba(6, 10, 20, .75) 55%, rgba(6, 10, 20, .92) 100%);
+  background: linear-gradient(180deg,
+    rgba(6, 10, 20, 0) 0%,
+    rgba(6, 10, 20, .75) 55%,
+    rgba(6, 10, 20, .92) 100%);
   pointer-events: none;
   -webkit-tap-highlight-color: transparent;
 }
@@ -307,22 +310,37 @@ body.embedded .install-banner{display:none!important}
   transition: color .2s, background .2s;
   opacity: .8;
 }
-
-.page-footer__link span {
-  color: var(--text);
-  opacity: .9;
-}
-
+.page-footer__link span { color: var(--text); opacity: .9; }
 .page-footer__link:hover,
 .page-footer__link:active {
   color: var(--text);
   background: rgba(120, 170, 255, .08);
   opacity: 1;
 }
-
 .page-footer__link:hover span,
-.page-footer__link:active span {
-  color: var(--blue);
+.page-footer__link:active span { color: var(--blue); }
+
+/* ===== Резерв места под фиксированный футер =====
+   Высота футера ≈ 40px + safe-area. Резервируем с запасом. */
+
+/* Экраны выбора (стартовый и класса) — чтобы «Продолжить» и «назад» не уезжали под футер */
+.screen {
+  padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+}
+
+/* Панель игры — чтобы кнопки режимов и «Сменить класс» были выше футера */
+.panel {
+  padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+}
+
+/* Бейдж с размером ёлки — поднять над футером */
+.size-badge {
+  bottom: calc(56px + env(safe-area-inset-bottom, 0px)) !important;
+}
+
+/* Модалка ачивок — тоже не должна упираться в футер */
+#modal {
+  padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
 }
 </style>
 </head>
@@ -1519,7 +1537,7 @@ document.getElementById('treeLayer').innerHTML = buildTree(0,0,false,false);
 })();
 </script>
   <footer class="page-footer">
-  <a class="page-footer__link" href="https://vk.ru/archigpt" target="_blank" rel="noopener noreferrer" aria-label="Автор игры — vk.ru/archigpt">Автор: <span>https://vk.ru/archigpt</span>
+  <a class="page-footer__link" href="https://vk.ru/archigpt" target="_blank" rel="noopener noreferrer" aria-label="Автор игры — vk.ru/archigpt">Автор: <span>vk.ru/archigpt</span>
   </a>
 </footer>
 </body>
